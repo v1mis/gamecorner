@@ -1,0 +1,20 @@
+{% extends "board_game_sites/base.html" %}
+
+{% block content %}
+
+<p>Game: {{game}}</p>
+
+<p>Info:</p>
+<ul>
+{% for info in info %}
+    <li>
+        <p>{{ info.date_added|date:'M d, Y H:i' }}</p>
+        <p>{{ info.text|linebreaks }}</p>
+    </li>
+{% empty %}
+    <li>There is no information on this game yet!</li>
+{% endfor %}
+
+</ul>
+
+{% endblock content %}
