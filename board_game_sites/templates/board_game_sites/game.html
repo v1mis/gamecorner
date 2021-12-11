@@ -4,7 +4,25 @@
 
 <p>Game: {{game}}</p>
 
-<p>Info:</p>
+<!-- BORROWED LAATIKKO -->
+<input type="checkbox" id="checkbox1">Borrowed</input>
+<button type="button" onClick="save()">save</button>
+
+<script>
+//TALLENNUSFUNKTIO
+function save() {	
+var checkbox = document.getElementById("checkbox1");
+localStorage.setItem("checkbox1", checkbox.checked);	
+}
+
+//APPIA UUDELLEENKÄYNNISTETTÄESSÄ
+var checked = JSON.parse(localStorage.getItem("checkbox1"));
+document.getElementById("checkbox1").checked = checked;
+
+</script>
+
+
+<p>Information/comments:</p>
 <ul>
 {% for info in info %}
     <li>
@@ -12,21 +30,7 @@
         <p>{{ info.text|linebreaks }}</p>
     </li>
 
-    <input type="checkbox" id="checkbox1">Borrowed</input>
-    <button type="button" onClick="save()">save</button>
-    
-    <script>
-    //TALLENNUSFUNKTIO
-    function save() {	
-	var checkbox = document.getElementById("checkbox1");
-    localStorage.setItem("checkbox1", checkbox.checked);	
-}
 
-    //APPIA UUDELLEENKÄYNNISTETTÄESSÄ
-    var checked = JSON.parse(localStorage.getItem("checkbox1"));
-    document.getElementById("checkbox1").checked = checked;
-
-    </script>
 
 
     <p>Remember to uncheck "Borrowed" when you decide to return the game!</p>
