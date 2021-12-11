@@ -8,6 +8,8 @@
 <input type="checkbox" id="checkbox1">Borrowed</input>
 <button type="button" onClick="save()">save</button>
 
+<p><u>Remember to uncheck "Borrowed", and save when you decide to return the game!</u></p>
+
 <script>
 //TALLENNUSFUNKTIO
 function save() {	
@@ -30,10 +32,6 @@ document.getElementById("checkbox1").checked = checked;
         <p>{{ info.text|linebreaks }}</p>
     </li>
 
-
-
-
-    <p>Remember to uncheck "Borrowed" when you decide to return the game!</p>
 {% empty %}
     <li>There is no information on this game yet!</li>
 {% endfor %}

@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-import board_game_sites
 from board_game_sites.forms import GameForm
 
 from board_game_sites.models import Boardgame
